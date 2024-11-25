@@ -96,18 +96,68 @@ textarea:not([rows]) {
 /*  */
 
 @font-face {
-  font-family: "futura";
-  src: url("./Futura Medium.ttf") format("truetype");
+  font-family: "poppins";
+  src: url("./Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "poppins bold";
+  src: url("./Poppins-Bold.ttf") format("truetype");
 }
 
-#menu button {
+h1{
+  font-family: "poppins bold";
+  color: #65BC46;
+
+}
+h2{
+  font-family: "poppins bold";
+  text-align: center;
+  font-size: 15pt;
+}
+header{
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  opacity : 1;
+  transition: opacity 1000ms;
+}
+.hide{
+  opacity : 0;
+  transition: opacity 1000ms;
+}
+.show{
+  opacity : 1;
+  transition: opacity 1000ms;
+}
+.infoText{
+  font-family: "poppins";
+  font-size: 12pt;
+  text-align: center;
+  padding: 0.4em;
+  
+}
+
+#content{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.menuButton {
   color: #65BC46;
   border: 0;
   background: none;
-  font-family: "futura";
-  font-size: 1.5em;
+  font-family: "poppins";
+  font-size: 1.2em;
   width: fit-content;
   letter-spacing: 1pt;
+  cursor: pointer;
+  border-radius: 0.5em;
+  padding: 0.4em;
+  background-color: rgb(193, 255, 203);
+  
 
 }
 
@@ -115,33 +165,26 @@ nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: rgb(223, 252, 250);
+  background-color: rgb(193, 255, 203);
+  
+  
 }
 
-#menu {
-  display: grid;
-  width: 80%;
-  place-items: center;
-  /* padding: 1em; */
+.menuItens {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+gap: 1em;
 
-}
-
-#menu button {
-  cursor: pointer;
-  border-radius: 1em;
-  padding: 0.4em;
 }
 
 .navBtns {
-  width: 100%;
   font-size: 1.1em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: 4fr 2fr 4fr;
   align-items: center;
   justify-items: center;
-  gap: 2em;
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
   background-color: rgb(193, 255, 203);
   padding: 0.2em;
   border-radius: 1em;
@@ -150,20 +193,32 @@ nav {
 #menu .selected {
   color: rgb(226, 162, 43);
   font-weight: 600;
+  background-color: #95eb92;
 }
 
 .logo {
-  width: 150px;
+  width: 90px;
 }
 
 .contentDiv {
+  width: 100%;
   background-color: rgb(141, 233, 113);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(1, minmax(170px, 1fr));
   justify-items: center;
   align-items: center;
-  margin-top: 2em;
   padding: 2em 0 2em 0;
+}
+
+.contentDivMainContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  background-color: rgb(168, 240, 146);
+  width: 80%;
+  border-radius: 2em;
+  padding: 1em;
+  gap: 2em;
+  margin-bottom: 2em;
 }
 
 .catEating {
@@ -180,7 +235,7 @@ nav {
   align-self: center;
   max-width: 500px;
   font-family: futura;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: center;
 }
 
@@ -204,4 +259,19 @@ nav {
     rotate: 0deg;
     transform: scale(1)
   }
+}
+
+.info {
+  width: 250px;
+  height: 240px;
+  background-color:#8DE971;
+  border-radius: 2em 0 2em 0;
+
+}
+#info1{
+  background-image: url("./info1img-02.svg");
+  background-repeat: no-repeat;
+  background-attachment: relative;
+  background-position:   -190% 180%; 
+  background-size: 300px;
 }
