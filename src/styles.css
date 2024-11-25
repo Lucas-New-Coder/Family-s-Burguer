@@ -1,4 +1,3 @@
-
 /* Box sizing rules */
 *,
 *::before,
@@ -14,8 +13,16 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin-block-end: 0;
 }
 
@@ -33,14 +40,21 @@ body {
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -58,8 +72,10 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
 }
@@ -74,48 +90,118 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-/*  */ /*  */ /*  */ /*  */
+/*  */
+/*  */
+/*  */
+/*  */
 
 @font-face {
-    font-family: "Stylish";
-    src: url("./Stylish-Regular.ttf") format("truetype");
+  font-family: "futura";
+  src: url("./Futura Medium.ttf") format("truetype");
 }
 
 #menu button {
-    color:red;
-    border: 0;
-    background: none;
-    font-family: "Stylish";
-    font-size: 1.5em;
-    width: fit-content;
-    
-}
-nav{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  color: #65BC46;
+  border: 0;
+  background: none;
+  font-family: "futura";
+  font-size: 1.5em;
+  width: fit-content;
+  letter-spacing: 1pt;
 
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(223, 252, 250);
 }
 
 #menu {
-    display: grid;
-    width: 80%;
-    grid-template-columns: repeat(4, auto);
-    place-items: center;
-    /* padding: 1em; */
+  display: grid;
+  width: 80%;
+  place-items: center;
+  /* padding: 1em; */
+
 }
+
 #menu button {
-cursor : pointer
+  cursor: pointer;
+  border-radius: 1em;
+  padding: 0.4em;
 }
-.teste{
-    display: flex;
-    min-width: 100vw;
-    min-height: 100vh;
-    background-color: #D2053F;
-    background-image: url("./homePageImage.png");
-    background-size: cover;
+
+.navBtns {
+  width: 100%;
+  font-size: 1.1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 2em;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  background-color: rgb(193, 255, 203);
+  padding: 0.2em;
+  border-radius: 1em;
 }
-.burgerImg{
-    min-width: 100%;
-    
+
+#menu .selected {
+  color: rgb(226, 162, 43);
+  font-weight: 600;
+}
+
+.logo {
+  width: 150px;
+}
+
+.contentDiv {
+  background-color: rgb(141, 233, 113);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  justify-items: center;
+  align-items: center;
+  margin-top: 2em;
+  padding: 2em 0 2em 0;
+}
+
+.catEating {
+  width: 280px;
+  justify-self: center;
+  animation-name: imageAnimation;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.contentText {
+  align-self: center;
+  max-width: 500px;
+  font-family: futura;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+@keyframes imageAnimation {
+  0% {
+    rotate: 0deg;
+    transform: scale(0.9);
+  }
+
+  40% {
+    rotate: 5deg;
+    transform: scale(1.05);
+  }
+
+  80% {
+    rotate: -5deg;
+    transform: scale(1.05)
+  }
+
+  100% {
+    rotate: 0deg;
+    transform: scale(1)
+  }
 }

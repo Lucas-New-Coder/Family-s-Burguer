@@ -1,5 +1,8 @@
 console.log("cuelho")
 import { loadHomePage } from "./homePage.js"
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 import { teste1 } from "./teste1.js"
 import "./styles.css"
 
