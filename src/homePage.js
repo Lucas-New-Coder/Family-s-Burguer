@@ -1,5 +1,7 @@
 import { htmlElement } from "./createDomElement"
 import catEating from "./catEating.svg"
+import merlinFace from "./merlinFace-02.svg"
+import merlinText from "./merlinTxt-04.svg"
 
 export const loadHomePage = function () {
     const content = document.querySelector("#content")
@@ -18,7 +20,7 @@ export const loadHomePage = function () {
     cat.src = catEating
     contentDivMainContainer.appendChild(cat)
 
-    const menuButton = htmlElement("button", "Menu", "", "menuButton")
+    const menuButton = htmlElement("button", " Products", "", "menuButton")
     contentDiv.appendChild(menuButton)
     const icon = document.createElement("i");
     icon.classList.add("fa-solid", "fa-utensils");
@@ -60,8 +62,27 @@ export const loadHomePage = function () {
     const infoText3 = htmlElement("p","With all the extra vitamins and minerals, you’re basically giving your cat a spa day in snack form. They’re worth it, right?.","","infoText")
     infto3TextContainer.appendChild(infoText3)
 
-
     homePageInfo.append(info1,info2,info3)
+
+    const merlinContainer = htmlElement("div","","","merlinContainer")
+    content.appendChild(merlinContainer)
+    const merlinTitle = htmlElement("h1","Recommended by Those Who Really Get Cats","","merlinTitle")
+    merlinContainer.appendChild(merlinTitle)
+
+    const merlinContentDiv = htmlElement("div","","","merlinContentDiv")
+    merlinContainer.appendChild(merlinContentDiv)
+    const merlinLogoDiv = htmlElement("div","","","merlinLogoDiv")
+    merlinContentDiv.appendChild(merlinLogoDiv)
+    const merlinFaceImg = htmlElement("img","","","merlinFaceImg")
+    merlinFaceImg.src = merlinFace
+    merlinLogoDiv.appendChild(merlinFaceImg)
+    const merlinTxt = htmlElement("img","","","merlinTxt")
+    merlinTxt.src = merlinText
+    merlinLogoDiv.appendChild(merlinTxt)
+    const merlinInfo = htmlElement("p","Let’s face it—cats are picky, dramatic, and a little too good at judging our life choices. But when Merlin Store, the wizards of all things pet-related, say <b>Cat Snack</b> is the real deal, you know it’s legit.<br><br>Merlin Store doesn’t mess around with recommendations. They’re all about top-tier pet care, and Cat Snack makes the cut for one simple reason: it works. Whether it’s keeping urinary health in check or just getting that smug feline approval, Cat Snack delivers.<br><br>Don’t just take our word for it—Merlin Store approves. And if they say it’s good, you know your cat will agree (because they always have the final say).","","merlinInfo")
+    merlinContentDiv.appendChild(merlinInfo)
+
+
 }
 
   

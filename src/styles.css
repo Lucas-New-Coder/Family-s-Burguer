@@ -95,87 +95,107 @@ textarea:not([rows]) {
 /*  */
 /*  */
 
+
 @font-face {
   font-family: "poppins";
   src: url("./Poppins-Medium.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "poppins bold";
   src: url("./Poppins-Bold.ttf") format("truetype");
 }
 
-h1{
+h1 {
   font-family: "poppins bold";
   color: #65BC46;
+  text-align: center;
 
 }
-h2{
+
+h2 {
   font-family: "poppins bold";
   text-align: center;
   font-size: 15pt;
+  text-align: center;
 }
-header{
+
+header {
   position: sticky;
   top: 0;
   z-index: 9;
-  opacity : 1;
+  opacity: 1;
+  transition: opacity 1000ms;
+  background-color: #8DE971;
+  animation-name: moveToPlace;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.hide {
+  opacity: 0;
   transition: opacity 1000ms;
 }
-.hide{
-  opacity : 0;
+
+.show {
+  opacity: 1;
   transition: opacity 1000ms;
 }
-.show{
-  opacity : 1;
-  transition: opacity 1000ms;
-}
-.infoText{
+
+p {
   font-family: "poppins";
   font-size: 12pt;
   text-align: center;
   padding: 0.4em;
-  
+
 }
 
-#content{
+#content {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 
 .menuButton {
-  color: #65BC46;
+  color: #2da541;
   border: 0;
   background: none;
   font-family: "poppins";
-  font-size: 1.2em;
+  font-size: 1em;
   width: fit-content;
   letter-spacing: 1pt;
   cursor: pointer;
   border-radius: 0.5em;
   padding: 0.4em;
-  background-color: rgb(193, 255, 203);
-  
+  transition: color 600ms, background-color 600ms;
 
+}
+
+.menuButton:hover {
+  background-color: white;
+  color: #01c031;
+  transition: 300ms;
 }
 
 nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: rgb(193, 255, 203);
-  
-  
+  /*   background-color: #8DE971; */
+
+
 }
 
 .menuItens {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5em;
 
 }
 
@@ -185,19 +205,24 @@ gap: 1em;
   grid-template-columns: 4fr 2fr 4fr;
   align-items: center;
   justify-items: center;
-  background-color: rgb(193, 255, 203);
+  /*   background-color: #8DE971; */
   padding: 0.2em;
   border-radius: 1em;
+  animation-name: moveToPlace;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 }
 
-#menu .selected {
+.selected {
   color: rgb(226, 162, 43);
-  font-weight: 600;
-  background-color: #95eb92;
+  font-family: "poppins bold";
+  background-color: white;
 }
 
 .logo {
-  width: 90px;
+  width: 60px;
+  cursor: pointer;
 }
 
 .contentDiv {
@@ -217,11 +242,37 @@ gap: 1em;
 }
 
 @keyframes moveToPlace {
-  0%{
+  0% {
     transform: translate(-100%);
   }
-  100%{
+
+  100% {
     transform: translate(0);
+  }
+}
+
+
+@keyframes reverseMoveToPlace {
+  0% {
+    transform: translateX(2000%);
+  }
+
+  60% {
+    transform: translateX(-40%);
+    easing: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  70% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(-20%);
+  }
+
+  90% {
+    transform: translateX(0);
+    easing: cubic-bezier(0.25, 1, 0.5, 1)
   }
 }
 
@@ -230,33 +281,33 @@ gap: 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   background-color: rgb(168, 240, 146);
-  width: 80%;
+  max-width: 80%;
   border-radius: 2em;
   padding: 1em;
   gap: 2em;
   margin-bottom: 2em;
   animation-name: moveToPlace;
-  animation-duration: 2.5s;
+  animation-duration: .5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
+  overflow: hidden;
 }
 
 .catEating {
   width: 280px;
   justify-self: center;
-  animation-name: imageAnimation;
-  animation-duration: 9s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+
+  animation: imageAnimation 9s ease-in-out infinite alternate,
+    reverseMoveToPlace 2.5s ease-in-out 1;
 }
 
 .contentText {
   align-self: center;
-  max-width: 500px;
   font-family: futura;
   font-size: 1.3em;
   text-align: center;
+  animation: moveToPlace 2.7s ease-in-out 1;
+  ;
 }
 
 @keyframes imageAnimation {
@@ -281,42 +332,144 @@ gap: 1em;
   }
 }
 
+@keyframes imageAnimation2 {
+  0% {
+    rotate: 0deg;
+    transform: scale(0.98);
+  }
+
+  40% {
+    rotate: 1deg;
+    transform: scale(1.05);
+  }
+
+  60% {
+    rotate: -1deg;
+    transform: scale(1.05)
+  }
+
+  100% {
+    rotate: 0deg;
+    transform: scale(1)
+  }
+}
+
 .info {
   width: 250px;
   height: 240px;
-  background-color:#8DE971;
+  background-color: #8DE971;
   border-radius: 2em 0 2em 0;
   margin-top: 2em;
   margin-bottom: 4em;
+  transition: transform 300ms, background-color 350ms;
 
 }
-#info1{
+
+.info:hover {
+  transform: translateY(-10px);
+  background-color: #baffa4;
+}
+
+#info1 {
   background-image: url("./info1img-02.svg");
   background-repeat: no-repeat;
   background-attachment: relative;
-  background-position:   -190% 180%; 
+  background-position: -190% 180%;
   background-size: 300px;
 }
-#info2{
+
+#info2 {
   background-image: url("./info2img-01.svg");
   background-repeat: no-repeat;
   background-attachment: relative;
-  background-position:   130% 100%; 
+  background-position: 130% 100%;
   background-size: 150px;
 }
-#info3{
+
+#info3 {
   background-image: url("./info3img-01.svg");
   background-repeat: no-repeat;
   background-attachment: relative;
-  background-position:   130% 100%; 
+  background-position: 130% 100%;
   background-size: 150px;
 }
-.homePageInfo{
+
+.homePageInfo {
   display: grid;
-  max-width: 100%;
+  max-width: 100vw;
   align-items: center;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 4em;
+
+}
+
+.merlinContainer {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  background-color: #534EA0;
+}
+
+.merlinTitle {
+  color: white;
+}
+
+.merlinLogoDiv {
+  display: grid;
+  grid-template-columns: 1.3fr 2fr;
+  justify-content: center;
+  align-items: center;
+  gap: .4em;
+  width: 430px;
+  overflow: hidden;
+  animation: imageAnimation2 5s ease-in-out infinite alternate;
+  
+}
+
+.merlinTxt {
+  animation: moveToPlace2 2s ease-in-out 1;
+  z-index: 1;
+
+
+}
+
+@keyframes moveToPlace2 {
+  0% {
+    transform: translate(100%);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+.merlinFaceImg {
+  z-index: 10;
+  animation: moveToPlace 2s ease-in-out 1;
+}
+
+.merlinContentDiv {
+
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  width: 95vw;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  padding: 2em;
+
+
+}
+
+.merlinInfo {
+  color: white;
+  max-width: 500px;
+  text-align: start;
+  line-break: strict;
 
 }
