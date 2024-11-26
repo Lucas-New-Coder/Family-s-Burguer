@@ -208,7 +208,23 @@ gap: 1em;
   justify-items: center;
   align-items: center;
   padding: 2em 0 2em 0;
+  animation-name: moveToPlace;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+
+
 }
+
+@keyframes moveToPlace {
+  0%{
+    transform: translate(-100%);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
 
 .contentDivMainContainer {
   display: grid;
@@ -219,6 +235,10 @@ gap: 1em;
   padding: 1em;
   gap: 2em;
   margin-bottom: 2em;
+  animation-name: moveToPlace;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 }
 
 .catEating {
@@ -266,6 +286,8 @@ gap: 1em;
   height: 240px;
   background-color:#8DE971;
   border-radius: 2em 0 2em 0;
+  margin-top: 2em;
+  margin-bottom: 4em;
 
 }
 #info1{
@@ -274,4 +296,27 @@ gap: 1em;
   background-attachment: relative;
   background-position:   -190% 180%; 
   background-size: 300px;
+}
+#info2{
+  background-image: url("./info2img-01.svg");
+  background-repeat: no-repeat;
+  background-attachment: relative;
+  background-position:   130% 100%; 
+  background-size: 150px;
+}
+#info3{
+  background-image: url("./info3img-01.svg");
+  background-repeat: no-repeat;
+  background-attachment: relative;
+  background-position:   130% 100%; 
+  background-size: 150px;
+}
+.homePageInfo{
+  display: grid;
+  max-width: 100%;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 4em;
+
 }

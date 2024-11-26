@@ -28,6 +28,7 @@ export const loadHomePage = function () {
     content.appendChild(whyCatSnack)
 
     const homePageInfo = htmlElement("div","","","homePageInfo")
+    
     content.appendChild(homePageInfo)
 
     const info1 = htmlElement("div","","info1","info")
@@ -47,10 +48,20 @@ export const loadHomePage = function () {
     info2.appendChild(infto2TextContainer)
     const infoTittle2 = htmlElement("h2","Say Bye to Bathroom Drama","","infoTittle")
     infto2TextContainer.appendChild(infoTittle2)
-    const infoText2 = htmlElement("p","Help your furry overlord (ahem, cat) keep their urinary tract in top shape—because a happy bladder means fewer vet trips for you!).","","infoText")
+    const infoText2 = htmlElement("p","Help your furry overlord (ahem, cat) keep their urinary tract in top shape—because a happy bladder means fewer vet trips for you!.","","infoText")
     infto2TextContainer.appendChild(infoText2)
 
+    const info3 = htmlElement("div","","info3","info")
+    content.appendChild(info3)
+    const infto3TextContainer = htmlElement("div","","","infto3TextContainer")
+    info3.appendChild(infto3TextContainer)
+    const infoTittle3 = htmlElement("h2","Nutrients Packed, Love Approved","","infoTittle")
+    infto3TextContainer.appendChild(infoTittle3)
+    const infoText3 = htmlElement("p","With all the extra vitamins and minerals, you’re basically giving your cat a spa day in snack form. They’re worth it, right?.","","infoText")
+    infto3TextContainer.appendChild(infoText3)
 
+
+    homePageInfo.append(info1,info2,info3)
 }
 
   
