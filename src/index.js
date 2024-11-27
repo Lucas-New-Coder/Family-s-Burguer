@@ -1,24 +1,36 @@
 console.log("cuelho")
 import { loadHomePage } from "./homePage.js"
+import { loadProducts } from "./products.js"
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import { teste1 } from "./teste1.js"
 import "./styles.css"
 
 
 loadHomePage()
 const handleNavClick = () => {
-    const btns = document.querySelectorAll("button")
-    btns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            if (btn.innerHTML === "teste1") {
-                teste1()
-            }else{
-                loadHomePage()
-            }
-        })
+
+
+
+  const btns = document.querySelectorAll("button")
+  btns.forEach((btn) => {
+    /* let selected = document.getElementsByClassName("selected") */
+
+
+    btn.addEventListener("click", () => {
+
+      btns.forEach(btn => btn.classList.remove('selected'));
+      globalThis.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+
+      if (btn.value === "Home Page") {
+        btn.classList.add("selected")
+        loadHomePage()
+      } if (btn.value === "Products") {
+        btn.classList.add("selected")
+        loadProducts()
+      }
     })
+  })
 }
 
 handleNavClick()
@@ -28,7 +40,7 @@ handleNavClick()
 // keep track of previous scroll position
 let prevScrollPos = window.pageYOffset;
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   // current scroll position
   const currentScrollPos = window.pageYOffset;
 

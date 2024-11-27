@@ -157,6 +157,7 @@ p {
   justify-content: center;
   align-items: center;
   background-color: white;
+  overflow-x: hidden;
 }
 
 
@@ -227,6 +228,7 @@ nav {
 
 .contentDiv {
   width: 100%;
+  height: 100vh;
   background-color: rgb(141, 233, 113);
   display: grid;
   grid-template-columns: repeat(1, minmax(170px, 1fr));
@@ -237,7 +239,21 @@ nav {
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
+}
 
+.arrowDown {
+  font-size: 2em;
+  animation: arrowDown 650ms infinite ease-in-out alternate;
+}
+
+@keyframes arrowDown {
+  0% {
+    transform: translateY(-25%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 
 }
 
@@ -251,30 +267,35 @@ nav {
   }
 }
 
+@keyframes reverseMoveToPlace2 {
+  0% {
+    transform: translate(150%);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
 
 @keyframes reverseMoveToPlace {
   0% {
     transform: translateX(2000%);
   }
 
-  60% {
-    transform: translateX(-40%);
-    easing: cubic-bezier(0.25, 1, 0.5, 1);
-  }
 
-  70% {
+
+
+
+
+
+  100% {
     transform: translateX(0);
-  }
-
-  75% {
-    transform: translateX(-20%);
-  }
-
-  90% {
-    transform: translateX(0);
-    easing: cubic-bezier(0.25, 1, 0.5, 1)
+    /* Finalização suave */
   }
 }
+
+
+
 
 
 .contentDivMainContainer {
@@ -282,6 +303,8 @@ nav {
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   background-color: rgb(168, 240, 146);
   max-width: 80%;
+  justify-content: center;
+  align-items: center;
   border-radius: 2em;
   padding: 1em;
   gap: 2em;
@@ -294,17 +317,18 @@ nav {
 }
 
 .catEating {
-  width: 280px;
+  width: 380px;
   justify-self: center;
 
-  animation: imageAnimation 9s ease-in-out infinite alternate,
-    reverseMoveToPlace 2.5s ease-in-out 1;
+  animation: imageAnimation 11s ease-in-out infinite alternate,
+    reverseMoveToPlace 2.4s ease-in-out forwards;
+
 }
 
 .contentText {
   align-self: center;
   font-family: futura;
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-align: center;
   animation: moveToPlace 2.7s ease-in-out 1;
   ;
@@ -362,12 +386,29 @@ nav {
   margin-top: 2em;
   margin-bottom: 4em;
   transition: transform 300ms, background-color 350ms;
+  opacity: 0;
+}
+
+.info.animate {
+  animation: infoAnimate 1s ease-in-out forwards;
 
 }
 
 .info:hover {
   transform: translateY(-10px);
   background-color: #baffa4;
+}
+
+@keyframes infoAnimate {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
 }
 
 #info1 {
@@ -384,6 +425,7 @@ nav {
   background-attachment: relative;
   background-position: 130% 100%;
   background-size: 150px;
+  animation-delay: 300ms;
 }
 
 #info3 {
@@ -392,6 +434,7 @@ nav {
   background-attachment: relative;
   background-position: 130% 100%;
   background-size: 150px;
+  animation-delay: 600ms;
 }
 
 .homePageInfo {
@@ -401,6 +444,7 @@ nav {
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 4em;
+  overflow: clip;
 
 }
 
@@ -425,14 +469,23 @@ nav {
   gap: .4em;
   width: 430px;
   overflow: hidden;
+
+}
+
+.merlinLogoDiv.animate {
   animation: imageAnimation2 5s ease-in-out infinite alternate;
-  
+
 }
 
 .merlinTxt {
-  animation: moveToPlace2 2s ease-in-out 1;
   z-index: 1;
+  opacity: 0;
 
+}
+
+.merlinTxt.animate {
+  animation: moveToPlace2 2s ease-in-out forwards;
+  opacity: 1;
 
 }
 
@@ -443,12 +496,19 @@ nav {
 
   100% {
     transform: translate(0);
+
   }
 }
 
 .merlinFaceImg {
   z-index: 10;
-  animation: moveToPlace 2s ease-in-out 1;
+  opacity: 0;
+
+}
+
+.merlinFaceImg.animate {
+  animation: moveToPlace 2s ease-in-out forwards;
+  opacity: 1;
 }
 
 .merlinContentDiv {
@@ -472,4 +532,85 @@ nav {
   text-align: start;
   line-break: strict;
 
+}
+
+
+.product {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  background-color: rgba(255, 255, 255, 0.371);
+  border: 3pt solid rgba(255, 255, 255, 0.5);
+  width: 240px;
+  height: 280px;
+  position: relative;
+  border-radius: 2em 0 2em 0;
+  overflow: hidden;
+  margin: 2em 0 2em 0;
+  transition:
+    /* background-color */
+    900ms;
+}
+
+.product:hover {
+  background-color: #01c031;
+  box-shadow: inset 10px -8px 8px #ffffff5c, inset -12px 4px 8px #00000036;
+  transition: 350ms;
+
+
+}
+
+.productImage {
+  width: 200px;
+  align-self: center;
+  margin-top: 1em;
+  filter: drop-shadow(-9px 7px 0px #00000057);
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #65BC46;
+  align-self: center;
+  justify-self: center;
+  position: absolute;
+  bottom: 0;
+
+}
+
+.product p {
+  margin: 0;
+  padding: 0;
+}
+
+.productNameTittle {
+  font-family: "poppins bold";
+  font-size: 15pt;
+  color: white;
+}
+.productsTittle{
+  opacity: 0;
+  animation: infoAnimate ease-in-out forwards 3s;
+
+}
+.productPrice {
+  color: white;
+  font-size: 15pt;
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  width: 80vw;
+  gap: 2em;
+  background-color: rgb(224, 255, 227);
+  border-radius: 2em;
+  padding: 1em;
+  margin-top: 2em;
+  animation: reverseMoveToPlace2 2.2s ease-in-out  forwards;
 }
