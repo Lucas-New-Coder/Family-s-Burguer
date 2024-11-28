@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <header class="navbar">
-        <nav>
+    <header class="header">
+        <nav class="navbar">
             <div id="menu">
                 
                 <div class="navBtns">
@@ -25,7 +25,28 @@
                 </div>
             </div>
         </nav>
+        <nav class="mobileNav">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <div class="navBtnsMobile">
+                <div class="menuItens">
+                    <button class="selected menuButton" value="Home Page"><i class="fa-solid fa-house"></i> Home
+                        Page</button>
+                    <button class="menuButton menuButtonMobile" value="Products"><i class="fa-solid fa-utensils"></i>
+                        Products</button>
+                    <button class="menuButton"><i class="fa-solid fa-circle-info"></i> About us</button>
+                    <button class="menuButton"><i class="fa-solid fa-briefcase"></i> Work with us</button>
+                </div>
+                <div class="menuItens">
+                </div>
+            </div>
+            <img src="logo.svg" alt="" class="logo logoMobile">
+        </nav>
     </header>
+    
     <div id="content">
 
     </div>
