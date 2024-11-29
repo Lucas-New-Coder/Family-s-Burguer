@@ -2,11 +2,13 @@ console.log("cuelho")
 import { loadHomePage } from "./homePage.js"
 import { loadProducts } from "./products.js"
 import { loadAboutUs } from "./aboutUs.js"
+import { loadWorkWithUs } from "./workWithUs.js"
 
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import "./styles.css"
+
 const content = document.querySelector("#content")
 const checker = document.getElementById("check")
 
@@ -25,6 +27,10 @@ loadHomePage()
 const handleNavClick = () => {
   const checker = document.getElementById("check")
 
+  const logo = document.querySelector(".logo")
+  logo.addEventListener("click", ()=>{
+    loadHomePage()
+  })
 
 
   const btns = document.querySelectorAll("button")
@@ -49,6 +55,9 @@ const handleNavClick = () => {
       } if (btn.value === "about") {
         btn.classList.add("selected")
         loadAboutUs()
+      }if (btn.value === "work") {
+        btn.classList.add("selected")
+        loadWorkWithUs()
       }
     })
   })
