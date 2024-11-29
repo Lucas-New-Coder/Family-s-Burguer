@@ -8,19 +8,45 @@
 <script defer src="main.js"></script></head>
 
 <body>
-    <header>
-        <nav>
+    <header class="header">
+        <nav class="navbar">
             <div id="menu">
-                <img src="ea94a444a2515b813f50.svg" alt="" class="logo">
+                
                 <div class="navBtns">
-                    <button class="selected" ><i class="fa-solid fa-house"></i> Home Page</button>
-                    <button><i class="fa-solid fa-utensils"></i> Menu</button>
-                    <button><i class="fa-solid fa-circle-info"></i> About us</button>
-                    <button><i class="fa-solid fa-briefcase"></i> Work with us</button>
+                    <div class="menuItens">
+                        <button class="selected menuButton" value="Home Page"><i class="fa-solid fa-house"></i> Home Page</button>
+                        <button class="menuButton" value="Products"><i class="fa-solid fa-utensils"></i> Products</button>
+                    </div>
+                    <img src="94e2842dbd1cadcc4004.svg" alt="" class="logo">
+                    <div class="menuItens">
+                        <button class="menuButton"><i class="fa-solid fa-circle-info"></i> About us</button>
+                        <button class="menuButton"><i class="fa-solid fa-briefcase"></i> Work with us</button>
+                    </div>
                 </div>
             </div>
         </nav>
+        <nav class="mobileNav">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <div class="navBtnsMobile">
+                <div class="menuItens">
+                    <button class="selected menuButton" value="Home Page"><i class="fa-solid fa-house"></i> Home
+                        Page</button>
+                    <button class="menuButton menuButtonMobile" value="Products"><i class="fa-solid fa-utensils"></i>
+                        Products</button>
+                    <button class="menuButton"><i class="fa-solid fa-circle-info"></i> About us</button>
+                    <button class="menuButton"><i class="fa-solid fa-briefcase"></i> Work with us</button>
+                </div>
+                <div class="menuItens">
+                </div>
+            </div>
+            <img src="94e2842dbd1cadcc4004.svg" alt="" class="logo logoMobile">
+        </nav>
     </header>
+    
     <div id="content">
 
     </div>
