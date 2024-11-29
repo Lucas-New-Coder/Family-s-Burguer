@@ -10,17 +10,18 @@ import "./styles.css"
 const content = document.querySelector("#content")
 const checker = document.getElementById("check")
 
-checker.addEventListener("click",() =>{
-  content.addEventListener("click",()=>{
+checker.addEventListener("click", () => {
+  content.addEventListener("click", () => {
 
-    if(checker.checked = true){
+    if (checker.checked = true) {
       checker.checked = false
     }
-  
+
   })
 })
 
-loadAboutUs()
+loadHomePage()
+
 const handleNavClick = () => {
   const checker = document.getElementById("check")
 
@@ -28,10 +29,10 @@ const handleNavClick = () => {
 
   const btns = document.querySelectorAll("button")
   btns.forEach((btn) => {
-    
+
 
     btn.addEventListener("click", () => {
-      
+
       checker.checked = false
 
       btns.forEach(btn => btn.classList.remove('selected'));
@@ -45,6 +46,9 @@ const handleNavClick = () => {
       } if (btn.value === "Products") {
         btn.classList.add("selected")
         loadProducts()
+      } if (btn.value === "about") {
+        btn.classList.add("selected")
+        loadAboutUs()
       }
     })
   })

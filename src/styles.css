@@ -664,9 +664,75 @@ nav {
   display: none;
 }
 
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: #01c031;
+}
+
+.notSure{
+  color: white;
+}
+.contactInfo{
+  color: white;
+  font-size: clamp(20px,1.5vw,100px);
+  padding: 0 1em 2em 1em;
+}
+.contactInfo b{
+  font-size: clamp(30px,2vw,350px);
+}
+
+.aboutUsMainContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #dbdbdb;
+  animation: moveToPlace 1.5s ease-in-out forwards;
+ 
+}
+.aboutUsContent {
+  font-display: flex;
+  justify-items: center;
+  width: 60vw;
+  height: 50vh;
+  margin: 0;
+  background-color: white;
+  border-radius: 3em;
+  overflow: hidden;
+  position: relative;
+}
+.myFamily{
+  position: absolute;
+  top: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0%;
+  right: 0%;
+  width: 400px;
+  animation: infoAnimate 2s ease-in-out  1 ;
+}
+
+.aboutUsMain{
+  width: 70%;
+  font-size: clamp(12pt,1.1vw,90pt);
+  align-self: center;
+  
+}
+
 /*  */
 /* media Queries  */
 /*  */
+
+
+
+
+
 @media only screen and (max-width: 860px) {
 
   /* home page */
@@ -750,59 +816,24 @@ nav {
     font-size: clamp(12px, 2vw, 150px);
   }
 
-  
-}
-.contact{
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  background-color: #01c031;
-}
+  .aboutUsContent {
+   width: 100vw; 
+   height: clamp(365px,50vw,900px);
+  }
 
-.notSure{
-  color: white;
-}
-.contactInfo{
-  color: white;
-  font-size: clamp(20px,1.5vw,100px);
-  padding: 0 1em 2em 1em;
-}
-.contactInfo b{
-  font-size: clamp(30px,2vw,350px);
-}
+  .aboutUsMain{
+    width: 100%;
+    font-size: clamp(10.4pt,2.5vw,70pt);
+  }
 
-.aboutUsMainContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  min-height: 89vh;
-  margin: 0;
-  background-color: #dbdbdb;
-}
-.aboutUsContent {
-  width: 80vw;
-  height: 80vh;
-  margin: 0;
-  background-color: white;
-  border-radius: 3em;
-  overflow: hidden;
-  position: relative;
-}
 .myFamily{
-  position: absolute;
-  top: 4em;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0%;
-  right: 0%;
-  width: 90vw;
-  
+  width: clamp(300px,55vw,900px);
+  top: 230px;
 }
 
-.aboutUsMain{
-  width: 50%;
-  align-self: center;
-  
+}
+@media only screen and (min-width: 592px) and (max-width:856px){
+  .myFamily{
+    top: 210px;
+  }
 }

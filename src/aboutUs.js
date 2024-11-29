@@ -1,5 +1,5 @@
 import { htmlElement } from "./createDomElement"
-import myFamilyImg from "./myFamily.svg"
+import myFamilyImg from "./myFamilyCats.svg"
 
 
 export const loadAboutUs = function () {
@@ -19,7 +19,7 @@ export const loadAboutUs = function () {
     aboutUsContent.appendChild(aboutUsMain)
 
     const myFamily = htmlElement("img","","","myFamily")
-    myFamily.src =myFamilyImg
+    myFamily.src = myFamilyImg
     aboutUsContent.appendChild(myFamily)
 
 }
