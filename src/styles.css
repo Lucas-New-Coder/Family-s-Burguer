@@ -668,6 +668,7 @@ nav {
 }
 
 .navBtnsMobile {
+  visibility: hidden;
   position: absolute;
   top: 2.8em;
   left: 0;
@@ -675,18 +676,20 @@ nav {
   z-index: 1;
   width: 200px;
   opacity: 0;
-  transition: opacity 900ms;
+  transition:  900ms;
 }
 
 #check:checked~.navBtnsMobile {
   display: flex;
+  visibility: visible;
   opacity: 1;
-  transition: opacity 900ms;
+  transition:  900ms;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
+
 }
 
 #check {
@@ -780,7 +783,9 @@ nav {
 @media only screen and (max-width: 860px) {
 
   /* home page */
-
+  .menuItens{
+    gap: 1em;
+  }
   .contentText {
     font-size: clamp(1.1em, 3vw, 1.2em);
   }

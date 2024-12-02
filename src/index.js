@@ -27,10 +27,17 @@ loadHomePage()
 const handleNavClick = () => {
   const checker = document.getElementById("check")
 
-  const logo = document.querySelector(".logo")
-  logo.addEventListener("click", ()=>{
-    loadHomePage()
+  const logo = document.querySelectorAll(".logo")
+
+  logo.forEach((logoImg)=>{
+    logoImg.addEventListener("click",() =>{
+      loadHomePage()
+    } )
   })
+
+ /*  logo.addEventListener("click", ()=>{
+    loadHomePage()
+  }) */
 
 
   const btns = document.querySelectorAll("button")
